@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tool Tip</title>
+    <style>
+      body {
+        display: grid;
+        place-content: center;
+        min-height: 100vh;
+        margin: auto;
+      }
+      .container {
+        display: flex;
+        gap: 20px;
+      }
+      .container > div {
+        background-color: aquamarine;
+        padding: 10px;
+        height: 1.5rem;
+        width: 5rem;
+        text-align: center;
+        border-radius: 10px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        position: relative;
+        justify-content: center;
+      }
+      .box {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        background-color: black;
+        color: white;
+        padding: 10px;
+        visibility: hidden;
+        border-radius: 12px;
+      }
+      .box::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .tool:hover .box {
+    top: 30px;
+        visibility: visible;
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1
+        style="
+          text-align: center;
+          font-family: Georgia, 'Times New Roman', Times, serif;
+        "
+      >
+        Css Tool Kit
+      </h1>
+    </div>
+    <div class="container">
+      <div class="tool">
+        <span class="box">Left</span>
+        <span>Left</span>
+      </div>
+      <div class="tool">
+        <span class="box">TOp</span>
+        <span>top</span>
+      </div>
+      <div class="tool">
+        <span class="box">bottom</span>
+        <span>bottom</span>
+      </div>
+      <div class="tool">
+        <span class="box">right</span>
+        <span>right</span>
+      </div>
+    </div>
+  </body>
+</html>
